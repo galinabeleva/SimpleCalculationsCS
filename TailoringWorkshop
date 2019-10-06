@@ -1,0 +1,23 @@
+using System;
+
+namespace TailoringWorkshop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOfTables = int.Parse(Console.ReadLine());
+            double lenghtOfTable = double.Parse(Console.ReadLine());
+            double widthOfTable = double.Parse(Console.ReadLine());
+
+            double areaOfSquareCloth = Math.Pow((lenghtOfTable / 2), 2);
+            double areaOfRectangleCloth = (lenghtOfTable + 0.6) * (widthOfTable + 0.6);
+
+            double priceUSD = (areaOfSquareCloth * 9 + areaOfRectangleCloth * 7) * numberOfTables;
+            double priceBGN = priceUSD * 1.85;
+
+            Console.WriteLine($"{priceUSD:f2} USD");
+            Console.WriteLine($"{priceBGN:f2} BGN");
+        }
+    }
+}
