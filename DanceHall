@@ -1,0 +1,22 @@
+using System;
+
+namespace DanceHall
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double hallLenght = double.Parse(Console.ReadLine());
+            double hallWidth = double.Parse(Console.ReadLine());
+            double closetSide = double.Parse(Console.ReadLine());
+
+            double hallArea = hallLenght * hallWidth * 10000;
+            double closetArea = Math.Pow((closetSide * 100), 2);
+            double benchArea = hallArea / 10;
+            double freeSpace = hallArea - closetArea - benchArea;
+            double numberOfDancers = freeSpace / 7040;
+
+            Console.WriteLine(Math.Floor(numberOfDancers));
+        }
+    }
+}
