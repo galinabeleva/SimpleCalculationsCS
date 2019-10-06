@@ -1,0 +1,26 @@
+using System;
+
+namespace CharityCampaign
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int campaignDays = int.Parse(Console.ReadLine());
+            int numberOfBakers = int.Parse(Console.ReadLine());
+            int numberOfCakes = int.Parse(Console.ReadLine());
+            int numberOfWaffles = int.Parse(Console.ReadLine());
+            int numberOfPancakes = int.Parse(Console.ReadLine());
+
+            double priceOfCakes = numberOfCakes * 45;
+            double priceOfWaffles = numberOfWaffles * 5.8;
+            double priceOfPanckes = numberOfPancakes * 3.2;
+
+            double totalRevenue = (priceOfCakes + priceOfPanckes + priceOfWaffles) * numberOfBakers * campaignDays;
+            double productsPrice = totalRevenue / 8;
+            double campaignMoney = totalRevenue - productsPrice;
+
+            Console.WriteLine($"{campaignMoney:f2}");
+        }
+    }
+}
